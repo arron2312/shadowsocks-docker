@@ -6,6 +6,3 @@ RUN apt-get install -y wget
 RUN wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
 RUN chmod +x shadowsocks.sh
 RUN ./shadowsocks.sh 2>&1 | tee shadowsocks.log
-
-# Configure container to run as an executable
-ENTRYPOINT ["/usr/local/bin/ssserver"]
